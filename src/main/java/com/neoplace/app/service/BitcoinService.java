@@ -38,7 +38,6 @@ import com.neoplace.app.modele.NewTransaction;
 public class BitcoinService {
 
 	final String passwordToDecrypt = "Toto2018@";
-	final String passwordToEncrypt = "Toto2018@";
 	static NetworkParameters params = new TestNet3Params();
 
 	String filePrefix = "peer2-testnet";
@@ -91,8 +90,6 @@ public class BitcoinService {
 		return null;
 	}
 
-
-	//https://bitcoin.stackexchange.com/questions/38947/how-to-get-balance-from-a-specific-address-in-bitcoinj
 	public long getBalance(final Balance balance){
 		final String publicKey = balance.getFromAdress();
 		final String passwordToDecryptBTC = balance.getPasswordToDecryptBTC();
@@ -125,7 +122,7 @@ public class BitcoinService {
 	}
 
 	/**
-	 * Retourne clé publique - currentReceiverAdress of wallet
+	 * return public key - currentReceiverAdress of wallet
 	 */
 	public static ReturnUserWalletToFront generateNewWallet(final NewAccountInput accountInput) throws IOException, UnreadableWalletException, BlockStoreException {
 
@@ -188,14 +185,10 @@ public class BitcoinService {
 	private static void sendTransactionBTC(final Wallet wallet, final NetworkParameters params, final PeerGroup peerGroup, final Coin valueToSend, String adressDestinataire) throws IOException{
 
 		//address to always display in GUI (for developers who needs it)
-		//c'est l'adresse permanante du wallet ?
 		final Address currentReceiveAdress = wallet.currentReceiveAddress();   System.out.println("currentReceiveAdress " + currentReceiveAdress);
 
-		//The freshReceiveKey/Address methods on the other hand always return a newly derived address.
-		//Si j'ai bien compris, c'est une nouvelle adresse générée à chaque fois par le wallet pour tout besoin de nouvelle transaction
 		final Address freshReceiveAddressWallet = wallet.freshReceiveAddress();  System.out.println("freshReceiveAddress " + freshReceiveAddressWallet);
 
-		//Voie la plus simple pour faire une transaction
 		final Address targetAddress = new Address (params, adressDestinataire);
 		// Do the send of 1 satoshi in the background. This could throw InsufficientMoneyException.
 		SendResult result = null;
@@ -206,7 +199,6 @@ public class BitcoinService {
 		}
 		// Save the wallet to disk, optional if using auto saving (see below).
 		wallet.encrypt("Toto2018@");
-		//wallet.saveToFile(new File("E:/bitcoin/"+currentReceiveAdress)); //pour mettre à jour le wallet - voir aussi la fonction autoSave qui le fait automatiquement
 		// Wait for the transaction to propagate across the P2P network, indicating acceptance.
 		try {
 			result.broadcastComplete.get();

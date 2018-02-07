@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.math.BigInteger;
 import java.util.concurrent.ExecutionException;
 
+import com.google.common.base.Joiner;
 import com.neoplace.app.modele.Balance;
 import com.neoplace.app.modele.NewAccountInput;
 import com.neoplace.app.modele.ReturnUserWalletToFront;
@@ -21,6 +22,7 @@ import org.bitcoinj.params.TestNet3Params;
 import org.bitcoinj.store.BlockStore;
 import org.bitcoinj.store.BlockStoreException;
 import org.bitcoinj.store.MemoryBlockStore;
+import org.bitcoinj.wallet.DeterministicSeed;
 import org.bitcoinj.wallet.UnreadableWalletException;
 import org.bitcoinj.wallet.Wallet;
 import org.bitcoinj.wallet.Wallet.SendResult;
@@ -152,12 +154,9 @@ public class BitcoinService {
 		returnUserWalletToFront.setBalanceWallet(new BigInteger("0"));
 		returnUserWalletToFront.setNameWalletJsonEthOrBtcName(wallet.currentReceiveAddress().toString());
 		returnUserWalletToFront.setLoginAccount(accountInput.getLoginAccount());
-		return  returnUserWalletToFront;
-
-
 
 		//optionnel pour la sécurité - 12 mots pour se rappeler du wallet
-		/*DeterministicSeed seed = wallet.getKeyChainSeed();
+		DeterministicSeed seed = wallet.getKeyChainSeed();
 		System.out.println(("Seed words are: " + Joiner.on(" ").join(seed.getMnemonicCode())));
 		System.out.println(("Seed birthday is: " + seed.getCreationTimeSeconds()));
 
@@ -171,7 +170,8 @@ public class BitcoinService {
 			e1.printStackTrace();
 		}
 		Wallet restoredWallet = Wallet.fromSeed(params, seed1);
-		*/
+
+		return  returnUserWalletToFront;
 	}
 
 	/**

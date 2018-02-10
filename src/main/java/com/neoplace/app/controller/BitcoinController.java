@@ -1,5 +1,6 @@
 package com.neoplace.app.controller;
 
+import com.neoplace.app.modele.Balance;
 import com.neoplace.app.modele.NewAccountInput;
 import com.neoplace.app.modele.NewTransaction;
 import com.neoplace.app.modele.ReturnUserWalletToFront;
@@ -33,13 +34,12 @@ public class BitcoinController {
     
 	@RequestMapping(method=RequestMethod.GET, value="/getbalancebtc")
 	public String getBalanceBTC(final String fromAddress, final String password) throws Exception {
-//        Balance balance = new Balance();
-//        balance.setFromAdress(fromAddress);
-//        balance.setPasswordToDecryptBTC(password);
-//		final String value = String.valueOf(bitcoinService.getBalance(balance));
-		//TODO change !!!!!
-		//
-        return "0";
+        Balance balance = new Balance();
+        balance.setFromAdress(fromAddress);
+        balance.setPasswordToDecryptBTC(password);
+		final String value = String.valueOf(bitcoinService.getBalance(balance));
+
+        return value;
 	}
 
 }

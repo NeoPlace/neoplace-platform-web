@@ -10,7 +10,6 @@ import java.util.concurrent.ExecutionException;
 
 import com.neoplace.app.modele.ReturnUserWalletToFront;
 
-import com.neoplace.app.modele.NewAccountInput;
 import com.neoplace.app.modele.NewTransaction;
 import com.neoplace.app.service.EthereumService;
 

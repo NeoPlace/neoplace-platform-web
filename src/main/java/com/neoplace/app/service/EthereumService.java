@@ -15,8 +15,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 import com.neoplace.app.modele.ReturnUserWalletToFront;
+import com.neoplace.app.modele.TransactionBean;
 
-import com.neoplace.app.modele.NewAccountInput;
 import com.neoplace.app.repo.EthTransactionRepositoryInterface;
 import com.neoplace.app.repo.EthereumNewAccountRepositoryInterface;
 import com.neoplace.app.repo.EthereumNewAccountUserRepo;

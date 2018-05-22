@@ -45,6 +45,13 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Ethereum -->
+		<dependency>
+			<groupId>org.web3j</groupId>
+			<artifactId>web3j-spring-boot-starter</artifactId>
+			<version>1.2.0</version>
+		</dependency>
+
 		<!-- Bitcoin -->
 		<dependency>
 			<groupId>org.bitcoinj</groupId>

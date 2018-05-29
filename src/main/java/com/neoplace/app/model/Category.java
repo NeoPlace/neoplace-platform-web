@@ -7,7 +7,10 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
-
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Category implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,6 +19,7 @@ public class Category implements Serializable{
     private String name;
 
     private Category parentCategory;
-    
+
+    @Setter
     private List<Category> subCategories;
 }

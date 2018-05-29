@@ -5,7 +5,10 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.List;
 
-
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Article {
 
     public enum Status {
@@ -43,6 +46,6 @@ public class Article {
 
     private float rating;
     private int ratingCount;
-    
+
 
 }

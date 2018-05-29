@@ -6,8 +6,8 @@ import java.math.BigInteger;
 import java.util.concurrent.ExecutionException;
 
 import com.google.common.base.Joiner;
-import com.neoplace.app.modele.Balance;
-import com.neoplace.app.modele.ReturnUserWalletToFront;
+import com.neoplace.app.model.Balance;
+import com.neoplace.app.model.ReturnUserWalletToFront;
 import lombok.extern.slf4j.Slf4j;
 import org.bitcoinj.core.Address;
 import org.bitcoinj.core.BlockChain;
@@ -27,7 +27,7 @@ import org.bitcoinj.wallet.Wallet;
 import org.bitcoinj.wallet.Wallet.SendResult;
 import org.springframework.stereotype.Service;
 
-import com.neoplace.app.modele.NewTransaction;
+import com.neoplace.app.model.NewTransaction;
 
 /*
  * Regarder balance : https://www.blocktrail.com/tBTC/address/mtaBxJjWXBziuwqUZ7bHpEiqGEZ5L8u6Cx/transactions

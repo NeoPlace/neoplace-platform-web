@@ -1,8 +1,8 @@
 package com.neoplace.app.controller;
 
-import com.neoplace.app.modele.Balance;
-import com.neoplace.app.modele.NewTransaction;
-import com.neoplace.app.modele.ReturnUserWalletToFront;
+import com.neoplace.app.model.Balance;
+import com.neoplace.app.model.NewTransaction;
+import com.neoplace.app.model.ReturnUserWalletToFront;
 import com.neoplace.app.service.BitcoinService;
 import lombok.extern.slf4j.Slf4j;
 import org.bitcoinj.store.BlockStoreException;

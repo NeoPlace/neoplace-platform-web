@@ -1,5 +1,8 @@
 package com.neoplace.app.utils;
 
+import io.ipfs.api.IPFS;
+import io.ipfs.api.MerkleNode;
+import io.ipfs.api.NamedStreamable;
 import org.apache.commons.io.FileUtils;
 import org.springframework.web.multipart.MultipartFile;
 import io.ipfs.api.cbor.*;
@@ -18,7 +21,7 @@ public class IPFSUtils {
         IPFSUtils.uploadToIPFS(multipartFileToFile(multipartFile));
     }
 
-    public static Multihash uploadToIPFS(File file) {
+    public static Multihash uploadToIPFS(File file) throws IOException {
         NamedStreamable.FileWrapper fileStreamable = new NamedStreamable.FileWrapper(file);
         MerkleNode addResult = ipfs.add(fileStreamable).get(0);
         return addResult.hash;

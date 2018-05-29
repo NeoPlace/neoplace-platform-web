@@ -8,9 +8,9 @@ import java.security.NoSuchProviderException;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-import com.neoplace.app.modele.ReturnUserWalletToFront;
+import com.neoplace.app.model.ReturnUserWalletToFront;
 
-import com.neoplace.app.modele.NewTransaction;
+import com.neoplace.app.model.NewTransaction;
 import com.neoplace.app.service.EthereumService;
 
 import org.springframework.beans.factory.annotation.Autowired;

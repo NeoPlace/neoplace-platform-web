@@ -6,7 +6,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.Principal;
 
-import com.neoplace.app.modele.ReturnUserWalletToFront;
+import com.neoplace.app.model.ReturnUserWalletToFront;
 import org.bitcoinj.store.BlockStoreException;
 import org.bitcoinj.wallet.UnreadableWalletException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.web3j.crypto.CipherException;
 
-import com.neoplace.app.modele.NewTransaction;
+import com.neoplace.app.model.NewTransaction;
 
 @RestController
 public class ParentController {

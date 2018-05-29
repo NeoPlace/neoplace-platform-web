@@ -1,4 +1,4 @@
-package com.neoplace.app.modele;
+package com.neoplace.app.model;
 
 import lombok.Data;
 

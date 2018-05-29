@@ -14,8 +14,8 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
-import com.neoplace.app.modele.ReturnUserWalletToFront;
-import com.neoplace.app.modele.TransactionBean;
+import com.neoplace.app.model.ReturnUserWalletToFront;
+import com.neoplace.app.model.TransactionBean;
 
 import com.neoplace.app.repo.EthTransactionRepositoryInterface;
 import com.neoplace.app.repo.EthereumNewAccountRepositoryInterface;
@@ -33,7 +33,7 @@ import org.web3j.protocol.infura.InfuraHttpService;
 import org.web3j.tx.Transfer;
 import org.web3j.utils.Convert;
 
-import com.neoplace.app.modele.NewTransaction;
+import com.neoplace.app.model.NewTransaction;
 
 import org.web3j.utils.Numeric;
 

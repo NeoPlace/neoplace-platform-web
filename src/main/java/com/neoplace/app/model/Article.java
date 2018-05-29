@@ -27,7 +27,8 @@ public class Article {
     private String title;
     private String subtitle;
 
-
+    @OneToOne
+    private Category category;
     private String description;
 
     private String tags;

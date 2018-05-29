@@ -20,6 +20,7 @@ public class Category implements Serializable{
 
     private Category parentCategory;
 
+    @JsonIgnore
     @Setter
     private List<Category> subCategories;
 }

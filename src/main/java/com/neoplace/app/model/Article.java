@@ -33,6 +33,8 @@ public class Article {
 
     private String tags;
 
+    private List<Gallery> gallery;
+
     @Setter
     private Status status;
     private int price;

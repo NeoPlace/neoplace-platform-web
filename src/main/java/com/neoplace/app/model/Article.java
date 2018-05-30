@@ -50,5 +50,6 @@ public class Article {
     private float rating;
     private int ratingCount;
 
+    private String sellerAddress;
 
 }

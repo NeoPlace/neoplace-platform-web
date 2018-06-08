@@ -5,8 +5,16 @@ import org.web3j.crypto.WalletUtils;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.http.HttpService;
 
+import javax.xml.bind.DatatypeConverter;
+
 public class Web3Utils {
 
-    private static Web3j web3 = Web3j.build(new HttpService());  // defaults to http://localhost:8545/
-    private static Credentials credentials = WalletUtils.loadCredentials("password", "/path/to/walletfile");
+    private static String ethereumRinkeby = "https://rinkeby.infura.io/...";
+
+    private static Web3j web3j =  Web3j.build(new HttpService(ethereumRinkeby));
+
+
+    public static String toHexString(byte[] array) {
+        return DatatypeConverter.printHexBinary(array);
+    }
 }

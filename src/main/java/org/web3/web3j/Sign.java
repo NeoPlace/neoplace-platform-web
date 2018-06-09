@@ -198,6 +198,13 @@ public class Sign {
         return key;
     }
 
+    public static ECDSASignature fromRpcSig(byte[] sig) {
+        byte[] bytesr = Arrays.copyOfRange(sig, 0, 32);
+        byte[] bytess = Arrays.copyOfRange(sig, 32, 64);
+
+        return new ECDSASignature(new BigInteger(1, bytesr), new BigInteger(bytess));
+    }
+
     /**
      * Returns public key from the given private key.
      *

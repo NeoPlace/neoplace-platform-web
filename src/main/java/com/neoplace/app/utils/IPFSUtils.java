@@ -33,4 +33,10 @@ public class IPFSUtils {
         fos.close();
         return convertedFile;
     }
+
+    public static String uploadToIPFS(String content) throws IOException {
+        NamedStreamable.ByteArrayWrapper file = new NamedStreamable.ByteArrayWrapper("hello.txt", content.getBytes());
+        MerkleNode addResult = ipfs.add(file).get(0);
+        return addResult.hash.toBase58();
+    }
 }

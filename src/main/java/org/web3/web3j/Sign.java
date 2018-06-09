@@ -1,24 +1,21 @@
-package org.web3j.crypto;
-
-import java.math.BigInteger;
-import java.security.SignatureException;
-import java.util.Arrays;
-import java.util.Optional;
+package org.web3.web3j;
 
 import org.bouncycastle.asn1.x9.X9ECParameters;
 import org.bouncycastle.asn1.x9.X9IntegerConverter;
-import org.bouncycastle.crypto.digests.SHA256Digest;
 import org.bouncycastle.crypto.ec.CustomNamedCurves;
 import org.bouncycastle.crypto.params.ECDomainParameters;
-import org.bouncycastle.crypto.params.ECPrivateKeyParameters;
-import org.bouncycastle.crypto.signers.ECDSASigner;
-import org.bouncycastle.crypto.signers.HMacDSAKCalculator;
 import org.bouncycastle.math.ec.ECAlgorithms;
 import org.bouncycastle.math.ec.ECPoint;
 import org.bouncycastle.math.ec.FixedPointCombMultiplier;
 import org.bouncycastle.math.ec.custom.sec.SecP256K1Curve;
-
+import org.web3j.crypto.ECDSASignature;
+import org.web3j.crypto.ECKeyPair;
+import org.web3j.crypto.Hash;
 import org.web3j.utils.Numeric;
+
+import java.math.BigInteger;
+import java.security.SignatureException;
+import java.util.Arrays;
 
 import static org.web3j.utils.Assertions.verifyPrecondition;
 

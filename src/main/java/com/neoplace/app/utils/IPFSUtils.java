@@ -3,11 +3,8 @@ package com.neoplace.app.utils;
 import io.ipfs.api.IPFS;
 import io.ipfs.api.MerkleNode;
 import io.ipfs.api.NamedStreamable;
-import org.apache.commons.io.FileUtils;
-import org.springframework.web.multipart.MultipartFile;
-import io.ipfs.api.cbor.*;
-import io.ipfs.cid.*;
 import io.ipfs.multihash.Multihash;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.FileOutputStream;

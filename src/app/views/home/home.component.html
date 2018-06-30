@@ -1,0 +1,28 @@
+
+<section class="home-section section-intro text-center home-background">
+  <div class="container">
+      <img style="width: 30%" src="assets/icon/logo_neoplace_blue.svg" alt="">
+      <h1><strong>Earn crypto. Spend crypto.</strong></h1>
+      <p class="text-muted">Find what you are looking for and pay in <strong>crypto</strong>.</p>
+      <div>
+
+      </div>
+  </div>
+</section>
+<section id="demos" class="home-section section-demos">
+  <div class="container text-center demo-box">
+    <h1>Discover The NeoPlace Market</h1>
+    <br>
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutWrap="wrap">
+      <div fxFlex="50" *ngFor="let v of versions">
+        <div class="p-1 text-center demo-box">
+          <h3>{{v.name}}</h3>
+          <div (click)="goToDashboard(v)" class="p-0 mat-elevation-z12 screenshot">
+            <img [src]="v.photo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

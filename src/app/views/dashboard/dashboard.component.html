@@ -1,0 +1,19 @@
+<div class="scrollable">
+  <section id="demos" class="home-section section-demos">
+    <div class="container">
+      <h1 class="text-center" *ngIf="type == 'computer'">Computer, Laptop & Accessories</h1>
+      <h1 class="text-center" *ngIf="type == 'phone'">Phones & Accessories</h1>
+      <h1 class="text-center" *ngIf="type == 'electronic'">Consumer Electronics</h1>
+      <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutWrap="wrap">
+        <div fxFlex="33" *ngFor="let v of category">
+          <div class="p-1 demo-box">
+            <h6>{{v.name}}</h6>
+            <div (click)="goToDashboard(v)" class="p-0">
+              <img style="width: 100%; cursor: pointer;" [src]="v.photo">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

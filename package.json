@@ -1,7 +1,6 @@
 {
-  "name": "egret",
+  "name": "NeoPlace",
   "version": "6.0.0",
-  "license": "https://themeforest.net/licenses/terms/regular",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

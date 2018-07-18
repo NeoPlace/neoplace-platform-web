@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import {Injectable} from '@angular/core';
+import {Router} from '@angular/router';
 import {AppConfirmService} from "./app-confirm/app-confirm.service";
-import {HttpClient} from "@angular/common/http";
+import {ApiService} from "./api.service";
 
 declare var window: any;
 declare var require: any;
@@ -22,7 +22,7 @@ export class Web3Service {
 
   constructor(private confirmService: AppConfirmService,
               private router: Router,
-              private http: HttpClient) {
+              private apiService: ApiService) {
     this.checkAndInstantiateWeb3();
   }
 
@@ -71,4 +71,16 @@ export class Web3Service {
 
   };
 
+  signMessage(publicAddress, nonce) {
+    return new Promise((resolve, reject) =>
+      window.web3.personal.sign(
+        Web3Service.web3.fromUtf8(`Your message (nonce: ${nonce})`),
+        publicAddress,
+        (err, signature) => {
+          if (err) return reject(err);
+          return resolve({ publicAddress: publicAddress, signature: signature });
+        }
+      )
+    );
+  }
 }

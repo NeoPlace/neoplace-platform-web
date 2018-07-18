@@ -55,6 +55,7 @@ import { RoutePartsService } from './services/route-parts.service';
 import { AppConfirmService } from './services/app-confirm/app-confirm.service';
 import { AppLoaderService } from './services/app-loader/app-loader.service';
 import {Web3Service} from "./services/web3.service";
+import {ApiService} from "./services/api.service";
 
 const classesToInclude = [
   HeaderTopComponent,
@@ -107,7 +108,8 @@ const classesToInclude = [
     RoutePartsService,
     AppConfirmService,
     AppLoaderService,
-    Web3Service
+    Web3Service,
+    ApiService
   ],
   declarations: classesToInclude,
   exports: classesToInclude

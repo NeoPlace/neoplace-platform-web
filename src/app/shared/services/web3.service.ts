@@ -71,10 +71,34 @@ export class Web3Service {
 
   };
 
+
+  login(publicAddress) {
+    return new Promise((resolve, reject) => {
+      let seq = this.apiService.get("subscribe/address", {publicAddress: publicAddress}).toPromise();
+
+      return seq.then(value => {
+
+        this.signMessage(value['publicAddress'], value['nonce'])
+          .then(value1 => {
+            this.authenticate(value1['publicAddress'], value1['signature'])
+              .subscribe(value2 => {
+                console.log("Successful authentication");
+                resolve(true);
+              }, error => {
+                reject(error);
+              })
+          }).catch(err => {
+          reject(err)
+        });
+
+      });
+    })
+  }
+
   signMessage(publicAddress, nonce) {
     return new Promise((resolve, reject) =>
       window.web3.personal.sign(
-        Web3Service.web3.fromUtf8(`Your message (nonce: ${nonce})`),
+        Web3Service.web3.fromUtf8(`Log in NeoPlace (nonce: ${nonce})`),
         publicAddress,
         (err, signature) => {
           if (err) return reject(err);
@@ -82,5 +106,9 @@ export class Web3Service {
         }
       )
     );
+  }
+
+  authenticate(publicAddress, signature) {
+    return this.apiService.post("login", {pubKey: publicAddress, signature: signature});
   }
 }
